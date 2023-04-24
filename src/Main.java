@@ -1,17 +1,26 @@
-import java.util.LinkedList;
-
-// TODO: Adressbuch, Kontakt implementieren
-// TODO: Drei Kontakte erstellen lassen
 public class Main {
+    /**
+     * Main-Klasse, für die Ausführung des Programms
+     *
+     * @author Nicole EINBRODT
+     * @author Vanessa ERDMANN
+     */
+
+    /**
+     * Main-Methode, für die Ausführung des Programms
+     * - Beispielkontakte werden zum Adressbuch hinzugefügt
+     * - während exit = false, werden die Methoden showList() und inputHandler() aufgerufen
+     * -> wenn der Nutzer "exit" eingibt, dann stoppt das Programm.
+     *
+     * @author Nicole EINBRODT
+     * @author Vanessa ERDMANN
+     */
     public static void main(String[] args) {
-        Kontakt k = new Kontakt("Hans", "Peters", "Wakenitz", "12a","FY2PW","Blackpool","UK");
-        Kontakt l = new Kontakt("Dieter", "Peters", "Wakenitz", "12a","FY2PW","Blackpool","UK");
-        Kontakt m = new Kontakt("Georg", "Peters", "Wakenitz", "12a","FY2PW","Blackpool","UK");
-        Adressbuch a = new Adressbuch();
-        a.addKontakt(k);
-        a.addKontakt(l);
-        a.addKontakt(m);
-        LinkedList<Kontakt> list = Adressbuch.kontaktList;
-        for (Kontakt kontakt : list) System.out.println(kontakt);
+        Eingabe.addKontakte();
+        boolean exit = false;
+        while (!exit) {
+            Eingabe.showList();
+            exit = Eingabe.inputHandler();
+        }
     }
 }

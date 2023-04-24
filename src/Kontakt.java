@@ -1,35 +1,53 @@
-// TODO: Attribute Vorname, Nachname, Straße, Plz, Stadt, Land mit Datentypen -> private Attribute
-// TODO: Konstruktor, der alle Attribute initialisiert
-// TOOD: toString, welche einen Kontakt als String ausgibt
-
+/**
+ * Klasse für Kontakt, nutzt Telefon und Adresse als Objekte
+ * @author Nicole EINBRODT
+ * @author Vanessa ERDMANN
+ */
 public class Kontakt {
     private String vorname;
-    private String nachname;
-    private String straße;
-    private String hausnummer;
-    private String plz;
-    private String stadt;
-    private String land;
 
-    public Kontakt(String vorname, String nachname, String straße, String hausnummer, String plz, String stadt, String land) {
+    private String nachname;
+
+
+    private Adresse adresse;
+    private Telefon telefon;
+
+    public Kontakt(String vorname, String nachname, Adresse adresse, Telefon telefon) {
         this.vorname = vorname;
         this.nachname = nachname;
-        this.straße = straße;
-        this.hausnummer = hausnummer;
-        this.plz = plz;
-        this.stadt = stadt;
-        this.land = land;
+        this.adresse = adresse;
+        this.telefon = telefon;
     }
 
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public Telefon getTelefon() {
+        return telefon;
+    }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    /**
+     * Konstruktor
+     *
+     * @author Nicole EINBRODT
+     * @author Vanessa ERDMANN
+     */
+    @Override
     public String toString() {
         return "Kontakt{" +
                 "vorname='" + vorname + '\'' +
                 ", nachname='" + nachname + '\'' +
-                ", straße='" + straße + '\'' +
-                ", hausnummer='" + hausnummer + '\'' +
-                ", plz='" + plz + '\'' +
-                ", stadt='" + stadt + '\'' +
-                ", land='" + land + '\'' +
+                ", adresse=" + adresse +
+                ", telefon=" + telefon +
                 '}';
     }
 }
