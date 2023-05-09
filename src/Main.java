@@ -1,26 +1,26 @@
+/**
+ * Main-Klasse, für die Ausführung des Programms
+ *
+ * @author Nicole EINBRODT
+ * @author Vanessa ERDMANN
+ */
 public class Main {
-    /**
-     * Main-Klasse, für die Ausführung des Programms
-     *
-     * @author Nicole EINBRODT
-     * @author Vanessa ERDMANN
-     */
+
 
     /**
      * Main-Methode, für die Ausführung des Programms
      * - Beispielkontakte werden zum Adressbuch hinzugefügt
-     * - während exit = false, werden die Methoden showList() und inputHandler() aufgerufen
+     * - während exit = false, werden die Methoden showList() und showCommands() aufgerufen
      * -> wenn der Nutzer "exit" eingibt, dann stoppt das Programm.
-     *
-     * @author Nicole EINBRODT
-     * @author Vanessa ERDMANN
+     * @param args Argumente
      */
     public static void main(String[] args) {
-        Eingabe.addKontakte();
+        Test.addContacts();
         boolean exit = false;
         while (!exit) {
-            Eingabe.showList();
-            exit = Eingabe.inputHandler();
+            Input.showList();
+            Input.showCommands();
+            exit = Input.inputHandler();
         }
     }
 }
